@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>learn html</title>
+	<link rel="stylesheet" href="./css/index.css">
+	<script type="text/javascript" src="./js/vue.js"></script>
+</head>
+<body>
+	<h2>初始</h2>
+	<div class="first_div">
+		<h1>{{header1}}</h1>
+		<h2>{{header2}}</h2>
+		<span v-bind:title="titleFun()">{{header3}}</span>
+	</div>
+	<hr>
+	<h2>v-bind</h2>
+	<div class="second_div">
+		<label>check<input type="checkbox" v-model="use"></label>
+		<div :class="{'class1':use}">哈哈哈</div>
+		{{use?'aaaa':'bbb'}}
+		<div v-if="use">You found me!</div>
+	</div>
+	<hr>
+	<h2>v-on</h2>
+	<div class="third_div">
+		<p>{{message}}</p>
+		<button type="button" v-on:click="reverse()" >点击反转</button>
+		<div>{{message|filterA()|filterB()}}</div>
+
+	</div>
+	<hr>
+	<h2>v-if</h2>
+	<div class="fourth_div">
+		<div v-if="show">
+			Hi, I'm Kangkang.
+		</div>
+		<div v-else>
+			Hi, I'm Maria.
+		</div>
+
+	</div>
+	<hr>
+	<h2>v-for</h2>
+	<div class="fifth_div">
+		<h4>template 迭代 <span>template标签不会输出，只会输出内部的</span></h4>
+		<template v-for="name in nameList">
+			<p>{{name}}</p>
+			
+		</template>
+		<h4>div 迭代 <span>每一个v-for所在的标签都会被迭代输出</span></h4>
+		<div v-for="name in nameList">
+			{{name}}
+		</div>
+		<h4>迭代value 和 index</h4>
+		<template v-for="(name,index) in nameList">
+			<p>item:{{name}},index:{{index}}</p>
+		</template>
+		<h4>如果迭代的是Object，那么value和key就是对应的值和key</h4>
+		<template v-for="(value,key) in userObj">
+			<p>{{key}}:{{value}}</p>
+
+		</template>
+		<h4>如果迭代的是Object，那么value和key就是对应的值和key,第三个参数就对应索引</h4>
+		<template v-for="(value,key,index) in userObj">
+			<p>{{key}}:{{value}}:{{index}}</p>
+
+		</template>
+	</div>
+</body>
+</html>
+<script type="text/javascript" src="./js/index.js"></script>
