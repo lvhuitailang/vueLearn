@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vue-router.js" type="text/javascript" charset="utf-8" ></script>
+</head>
+<body>
+	<div class="app1">
+
+		<router-link to="/">首页</router-link>
+		<router-link to="/login">登录</router-link>
+		<router-link to="/post">帖子管理</router-link>
+		<div>
+			<router-view></router-view>
+		</div>
+		
+		
+	</div>
+	<template id="index_tpl">
+		<div class="index">
+			<h1>首页</h1>
+		</div>
+	</template>
+	<template id="login_tpl">
+		<div class="login">
+			<h1>登录</h1>
+		</div>
+	</template>
+	<template id="post_tpl">
+		<div class="post">
+			<h1>帖子管理</h1>
+			<div>
+				<router-link to="info" append>更多信息</router-link>
+				<router-view></router-view>
+			</div>
+		</div>
+	</template>
+</body>
+</html>
+<script type="text/javascript" src="./js/vueRouterLearn2.js"></script>

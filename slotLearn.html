@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="./css/slotLearn.css">
+	<script type="text/javascript" src="./js/vue.js"></script>
+</head>
+<body>
+<div class="app1">
+	<panel>
+		<h1 slot="title">
+			Title
+		</h1>
+		<div slot="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+		<div slot="footer">
+			More Infos.
+		</div>
+		
+	</panel>
+	
+</div>
+
+
+	<template id="panel_tpl">
+		<div class="panel">
+			<div class="title">
+				<slot name="title"></slot>
+			</div>
+			<div class="content">
+				<slot name="content"></slot>
+			</div>
+			<div class="footer">
+				<slot name="footer"></slot>
+			</div>
+		</div>
+
+
+	</template>
+	
+</body>
+</html>
+<script type="text/javascript" src="js/slotLearn.js"></script>

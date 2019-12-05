@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vue-router.js" type="text/javascript" charset="utf-8" ></script>
+</head>
+<body>
+	<div class="app1">
+		<div>
+			<router-link to="/">首页</router-link>
+			<router-link to="/userHome/wolfie">个人中心</router-link>
+			<router-link to="/userHome/xhh">个人中心</router-link>
+		</div>
+		<div>
+			<router-view></router-view>
+		</div>
+
+
+
+	</div>
+
+	<template id="page_one">
+		<div class="page_one">
+			<h1>首页</h1>
+		</div>
+	</template>
+	<template id="page_two">
+		<div class="page_one">
+			<h1>个人中心</h1>
+			<div>我叫:{{$route.params.username}}</div>
+			<div v-if="$route.query.age">我今年{{$route.query.age}}岁了</div>
+			<div class="more">
+				<router-link :to="'/userHome/'+$route.params.username+'/more'">更多信息</router-link>
+				<router-view></router-view>
+			</div>
+		</div>
+	</template>
+	<template id="page_two_more">
+		<div class="page_two_more">
+			<div>{{$route.params.username}}的更多信息</div>
+			<div>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</div>
+		</div>
+	</template>
+	
+</body>
+</html>
+<script type="text/javascript" src="./js/vueRouterLearn1.js"></script>
